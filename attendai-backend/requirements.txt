@@ -12,7 +12,7 @@ dj-database-url==2.2.0
 
 # --- AI / Computer Vision ---
 opencv-python-headless==4.10.0.84
-mediapipe==0.10.14
+mediapipe==0.10.21
 insightface==0.7.3
 onnxruntime==1.19.2
 numpy==1.26.4
