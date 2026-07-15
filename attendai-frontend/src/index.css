@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink900;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.signal.500');
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Signature element: reticle corner brackets, evoking a face-detection
+     bounding box. Used around avatars, camera frames, and key stat cards. */
+  .reticle {
+    position: relative;
+  }
+  .reticle::before,
+  .reticle::after,
+  .reticle > .reticle-tl,
+  .reticle > .reticle-br {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: theme('colors.signal.500');
+    border-style: solid;
+    border-width: 0;
+  }
+  .reticle::before {
+    top: -6px;
+    left: -6px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 4px;
+  }
+  .reticle::after {
+    bottom: -6px;
+    right: -6px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .card {
+    @apply bg-card border border-line rounded-lg shadow-card;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded font-medium text-sm px-4 py-2.5 transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-ink-700;
+  }
+  .btn-signal {
+    @apply btn bg-signal-500 text-white hover:bg-signal-600;
+  }
+  .btn-outline {
+    @apply btn border border-line bg-white text-ink900 hover:bg-paper;
+  }
+  .btn-ghost {
+    @apply btn text-ink600 hover:bg-paper;
+  }
+  .btn-danger {
+    @apply btn bg-absent text-white hover:bg-red-700;
+  }
+
+  .input {
+    @apply w-full rounded border border-line bg-white px-3 py-2.5 text-sm text-ink900 placeholder:text-ink400 focus:border-signal-500 focus:ring-1 focus:ring-signal-500 outline-none transition;
+  }
+  .label {
+    @apply block text-xs font-medium uppercase tracking-wide text-ink600 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+  .badge-present { @apply badge bg-emerald-50 text-present; }
+  .badge-late { @apply badge bg-amber-50 text-late; }
+  .badge-absent { @apply badge bg-rose-50 text-absent; }
+  .badge-spoof { @apply badge bg-pink-50 text-spoof; }
+
+  .stat-eyebrow {
+    @apply text-xs font-mono uppercase tracking-widest text-ink400;
+  }
+
+  .scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, theme('colors.signal.400'), transparent);
+    animation: scan 2.4s linear infinite;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded text-sm font-medium text-ink400 hover:text-white hover:bg-white/5 transition-colors;
+  }
+  .sidebar-link.active {
+    @apply text-white bg-white/10;
+  }
+}
