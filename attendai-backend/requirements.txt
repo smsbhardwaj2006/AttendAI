@@ -7,26 +7,23 @@ django-filter==24.3
 python-decouple==3.8
 
 # --- Database ---
-dj-database-url==2.2.0
 psycopg2-binary==2.9.9
+dj-database-url==2.2.0
 
 # --- AI / Computer Vision ---
-# Pinned as minimums (not exact versions) — these move fast and exact pins
-# go stale quickly as new Python versions drop old wheel support. Pip will
-# resolve whichever compatible version is available for your interpreter.
-opencv-python-headless>=4.10.0.84
-mediapipe>=0.10.14
-insightface>=0.7.3
-onnxruntime>=1.19.2
-numpy>=1.26.4,<2.0
-pandas>=2.2.2
-scikit-learn>=1.5.1
-Pillow>=10.4.0
+opencv-python-headless==4.10.0.84
+# mediapipe==0.10.21
+insightface==0.7.3
+onnxruntime==1.19.2
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+Pillow==10.4.0
 
 # --- Reports ---
-reportlab>=4.2.2
-weasyprint>=62.3
+reportlab==4.2.2
+weasyprint==62.3
 
 # --- Utilities ---
-gunicorn>=22.0.0
-whitenoise>=6.7.0
+gunicorn==22.0.0
+whitenoise==6.7.0
