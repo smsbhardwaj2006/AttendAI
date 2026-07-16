@@ -14,7 +14,7 @@ dj-database-url==2.2.0
 opencv-python-headless==4.10.0.84
 # mediapipe==0.10.21
 insightface==0.7.3
-onnxruntime==1.19.2
+onnxruntime==1.27.0
 numpy==1.26.4
 pandas==2.2.2
 scikit-learn==1.5.1
